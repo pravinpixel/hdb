@@ -1,0 +1,311 @@
+.header-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #FFFFFF;
+}
+
+.container-xxl {
+    max-width: 1440px;
+    padding: 0;
+}
+
+
+body {
+    background-image: url('./images/bannerbl.png');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.padd-text-h2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.padd-style-h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.h2-text {
+    font-family: "Cabin", serif;
+    ;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-cardsone {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.card-new {
+
+    backdrop-filter: blur(18.746665954589844px);
+
+    box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
+
+    box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
+    width: 450px;
+    height: 280px;
+    margin-bottom: 30px;
+    border-radius: 22px;
+}
+
+.sec-2 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card-body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.card-title {
+    font-family: "Cabin", serif;
+    text-align: center;
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.card-2 {
+    background-color: rgba(255, 255, 255, 1);
+    width: 95%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-3 {
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    bottom: 30px;
+    margin: auto;
+}
+
+.card-body-2 {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 38px;
+    padding-left: 38px;
+}
+
+.text-h3 {
+    font-family: "Cabin", serif;
+    color: rgba(254, 0, 11, 1);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.steps {
+    color: rgba(10, 103, 109, 1);
+}
+
+.ul-text {
+    list-style-type: none;
+    margin-left: -30px;
+    position: relative;
+    top: 7px;
+}
+
+.li-text {
+    font-family: "Cabin", serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.img-vect {
+    display: flex;
+    justify-content: center;
+
+}
+
+.vect-img {
+    width: 75px;
+    height: 90px;
+}
+
+.card-staff {
+    backdrop-filter: blur(18.746665954589844px);
+
+    box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
+
+    box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
+    width: 95%;
+    height: 380px;
+    margin-bottom: 30px;
+    border-radius: 22px;
+}
+
+.background-textbox {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 65px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.background-textbox:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.background-textbox::placeholder {
+    color: white;
+    text-align: center;
+}
+
+.background-textbox:focus {
+    border-color:  rgba(254, 0, 11, 1);
+    outline: none;
+}
+
+.btn-color-new {
+    background-color: rgba(254, 0, 11, 1);
+    color: #FFFFFF;
+    font-family: "Cabin", serif;
+
+}
+
+.btn-center {
+    text-align: center;
+    position: relative;
+    top: 10px
+}
+
+
+.card-border {
+    border-color: rgba(254, 0, 11, 1);
+}
+
+.content-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-content {
+    font-family: "Cabin", serif;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.flex-checkout {
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.card-chekout {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+}
+
+.final-text {
+    font-family: "Cabin", serif;
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+.img-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow-img {
+    width: 40px;
+    height: 40px;
+    margin-top: 28px;
+}
+
+.margin-index {
+    margin-top: 50px;
+}
+
+/* responsive */
+
+@media (max-width: 992px) {
+    .flex-cardsone {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sec-2 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .card-new {
+
+        backdrop-filter: blur(18.746665954589844px);
+
+        box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
+
+        box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
+        width: 300px;
+        height: 280px;
+        margin-bottom: 30px;
+        border-radius: 22px;
+    }
+}
+
+.btn-end{
+    margin-top: 90px;
+}
+
+.btn-end-new{
+    margin-top: 10px;
+   
+}
+
+.button-icon{
+    background-color: rgba(254, 0, 11, 1);
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
+.img-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+}
+.img-user{
+   width: 40px;
+   height: 40px;
+}
+
+.login-h4{
+    color: #FFFFFF;
+    font-family: "Cabin", serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.flex-cont{
+    display: flex;
+    align-items: end;
+}
