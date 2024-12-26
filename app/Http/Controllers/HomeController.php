@@ -94,10 +94,11 @@ class HomeController extends Controller
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
+        $isButtonDisabled = count($checkout_id) == 0 ? 'disabled' : ''; 
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
                  <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new'>
-              <button type='button' class='btn btn-color-new'>Check out</button>
+              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Check out</button>
             </div> 
           </div>
         </div>";
@@ -226,10 +227,11 @@ class HomeController extends Controller
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
+        $isButtonDisabled = count($checkout_id) == 0 ? 'disabled' : '';
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
         <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new'>
-              <button type='button' class='btn btn-color-new' id='return'>Check out</button>
+              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Check out</button>
             </div> 
           </div>
         </div>";
