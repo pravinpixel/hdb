@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>{{ env('APP_NAME') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="{{ asset('dark/assets/images/favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ asset('dark/assets/css/core.css')}}" rel="stylesheet" type="text/css">
+	 <link href="{{ asset('dark/assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+	 <link href="{{ asset('dark/assets/css/components.css')}}" rel="stylesheet" type="text/css">
+	 <link href="{{ asset('dark/assets/css/common.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset('dark/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('dark/assets/css/style.css')}}" rel="stylesheet"/>
+ 
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header-image">
+        <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
+      </div>
+
+      <div class="banner-img-check">
+        <div class="container home-style">
+          <div class="padd-text-h1">
+            <h1 class="h2-check-text">Welcome to HBD Library</h1>
+          </div>
+
+       <div class="card-staff-check">
+            <div class="card-body-3-final">
+              <div class="thumbs-up">
+                 <img src="{{asset('dark/assets/images/home/like.png')}}" alt="like" class="like-img"/>
+              </div>
+              <div class="padd-style-final-h2">
+                <h1 class="h2-text">
+                  The books have been successfully checked in
+                </h1>
+              </div>
+              <div class="btn-center-final">
+              <button type="button" class="btn btn-color-new" onclick="window.location.href='{{ env('APP_URL') }}';">Back to Home</button>
+              </div>
+            </div>
+          </div>
+
+          <section class="sec-2">
+            <div class="card-2">
+              <div class="card-body-check-2">
+                <div>
+                  <h3 class="text-h3">How to check-in/check-out Library's resources:</h3>
+                  <ul class="ul-text">
+                    <li class="li-text">
+                      <span class="steps"> Step -1:</span>
+                      Click 'check-out/check-in' to begin.
+                    </li>
+                    <li class="li-text">
+                      <span class="steps"> Step -2:</span>
+                      Key in your Staff ID number
+                    </li>
+                    <li class="li-text">
+                      <span class="steps"> Step -3:</span>
+                      Scan the books you would like to check-in/check-out one by one on the RFID pad
+                    </li>
+                    <li class="li-text">
+                      <span class="steps"> Step -4:</span>
+                      Check that all the books have been successfully scanned by the system and click check-out/check-in
+                      to complete the check-in/check-out process
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="btn-parent">
+            <div class="button-icon" style="cursor: pointer;" onclick="window.location.href='{{ env('ADMIN_LOGIN') }}'">
+              <div class="img-center">
+                <img src="{{asset('dark/assets/images/home/user.png')}}" class="img-user" />
+                <h4 class="login-h4">login</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="{{ asset('dark/assets/js/bootstrap.min.js')}}"></script>
+  </body>
+</html>

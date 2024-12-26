@@ -118,6 +118,77 @@
               ajaxStart();
               ajaxStop();
       });
+       function deleteCheckout(checkoutId) {
+        ajaxStart();
+         var type = $("input[name='type']").val(); 
+         var staff_id = $("input[name='staff_id']").val();
+          $.ajax({
+                url: '{{ url('item-delete') }}', 
+                type: 'POST', 
+                dataType: 'json', 
+                data: { 
+                  type: type,
+                  staff_id:staff_id,
+                  checkoutId:checkoutId,
+                  _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                $('#item_data').html(''); 
+                $('#item_data').html(response.data); 
+                },
+                error: function(xhr, status, error) {
+                      ajaxStop();
+                  console.error('Error:', error);
+                },
+                beforeSend: function() {
+                      ajaxStart();
+                },
+                complete: function() { 
+                      ajaxStop();
+                }
+          });
+      }
+     var selectedCheckouts = [];
+      function unsetCheckout(checkoutId) {
+          ajaxStart();
+          selectedCheckouts.push(checkoutId);
+          console.log(selectedCheckouts);
+
+          var type = $("input[name='type']").val(); 
+          var staff_id = $("input[name='staff_id']").val();
+          
+          $.ajax({
+              url: '{{ url('item-unset') }}', 
+              type: 'POST', 
+              dataType: 'json', 
+              data: { 
+                  type: type,
+                  staff_id: staff_id,
+                  checkoutId: selectedCheckouts,
+                  _token: '{{ csrf_token() }}'
+              },
+              success: function(response) {
+                  $('.banner-content').html('');
+                  $('.banner-content').html(response.data);
+                  if (Array.isArray(response.checkoutId)) {
+                      response.checkoutId.forEach(function(id) {
+                          selectedCheckouts.push(id);
+                      });
+                  }
+              console.log('Updated selectedCheckouts:', selectedCheckouts);
+              },
+              error: function(xhr, status, error) {
+                  ajaxStop();
+                  console.error('Error:', error);
+              },
+              beforeSend: function() {
+                  ajaxStart();
+              },
+              complete: function() { 
+                  ajaxStop();
+              }
+          });
+      }
     $(document).ready(function() {
       $('.card-new').on('click', function() {
         ajaxStart();
@@ -214,6 +285,7 @@
                  $('#item_data').html(''); 
                 $('#item_data').html(response.data); 
               }else{
+              $('#itemErr').html('');
               $('#itemErr').append(response.err);
                 ajaxStop();
                 return; 
@@ -231,12 +303,11 @@
               }
         });
       });
-      $('#check-in').on('click', function() {
+      $(document).on('click', '#taken', function() {
         ajaxStart();
          var type = $("input[name='type']").val(); 
          var staff_id = $("input[name='staff_id']").val();
-         var check_in = $("input[name='check_in[]']").val();
-        
+         var check_in = $("input[name='check_in']").val();
         $.ajax({
               url: '{{ url('check-in') }}', 
               type: 'POST', 
@@ -248,7 +319,37 @@
                 _token: '{{ csrf_token() }}'
               },
               success: function(response) {
-             
+              window.location.href = response.redirect_to;
+              },
+              error: function(xhr, status, error) {
+                     ajaxStop();
+                console.error('Error:', error);
+              },
+              beforeSend: function() {
+                     ajaxStart();
+              },
+              complete: function() { 
+                     ajaxStop();
+              }
+        });
+      });
+       $(document).on('click', '#return', function() {
+        ajaxStart();
+         var type = $("input[name='type']").val(); 
+         var staff_id = $("input[name='staff_id']").val();
+         var check_in = $("input[name='check_in']").val();
+        $.ajax({
+              url: '{{ url('check-out') }}', 
+              type: 'POST', 
+              dataType: 'json', 
+              data: { 
+                type: type,
+                staff_id:staff_id,
+                check_out:check_in,
+                _token: '{{ csrf_token() }}'
+              },
+              success: function(response) {
+              window.location.href = response.redirect_to;
               },
               error: function(xhr, status, error) {
                      ajaxStop();

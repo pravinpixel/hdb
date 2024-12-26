@@ -22,4 +22,14 @@ Route::post('verify-staff', [HomeController::class, 'verifyStaff'])->name('verif
 Route::post('check-item', [HomeController::class, 'CheckItem'])->name('check.item');
 Route::post('check-in', [HomeController::class, 'CheckIn'])->name('check.in');
 
+Route::post('check-out', [HomeController::class, 'CheckOut'])->name('check.out');
+
+Route::post('item-delete', [HomeController::class, 'ItemDelete'])->name('item.delete');
+
+Route::post('item-unset', [HomeController::class, 'ItemUnset'])->name('item.unset');
+
+Route::get('check-in-success', [HomeController::class, 'CheckInSuccess'])->name('check.in.success');
+
+Route::get('check-out-success', [HomeController::class, 'CheckOutSuccess'])->name('check.out.success');
+
 
