@@ -16,9 +16,6 @@ class HomeController extends Controller
     }
     public function getStaff(Request $request)
     { 
-
-
-      
         $div = "<div class='card-staff-check'>
         <div class='card-body-3'>
             <div class='padd-style-checkout-h2'>
@@ -28,7 +25,7 @@ class HomeController extends Controller
                 <input type='text' class='form-control background-textbox' name='staff_id' placeholder='eg. V15267' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default'>
                
             </div>
-             <b style='color:red' id='staffErr'></b>
+             <b style='color:red; display: inline-flex;height: 30px;' id='staffErr'></b>
              <input type='hidden' name='type' value='{$request->type}'>
             <div class='btn-center'>
                 <button id='verify-staff' type='button' class='btn btn-color-new'>Submit</button>
@@ -54,7 +51,7 @@ class HomeController extends Controller
        if($request->type == 'check-in'){
         $div = "
         <div class='card-staff-check'>
-            <div class='card-body-4'>
+            <div class='card-body-4 '>
                 <div class='padd-style-checkout-h2'>
                   <h5 class='h2-text'>Welcome {$user->first_name}</h5><br>
                     <h1 class='h2-text'>Enter Your BOOK ID</h1>
@@ -78,7 +75,8 @@ class HomeController extends Controller
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
               <h1 class='h2-text'>Waiting for Scanning the books</h1>
-            </div><div class='card card-border' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+            </div>
+            <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -112,12 +110,18 @@ class HomeController extends Controller
     }
     public function CheckItem(Request $request)
     { 
-        $item=Item::where('item_ref',$request->item_ref)->first();
+        $item=Item::where('item_ref',$request->item_ref)->where('status',1)->first();
         if(!$item){
         return response()->json([
             'status' => false,
             'err' => 'Item RFID not found' 
         ]);
+        }
+        if($item->is_active == 1){
+            return response()->json([
+                'status' => false,
+                'err' => 'Item Already Taken' 
+            ]);
         }
         $user=User::where('member_id',$request->staff_id)->first();
         $ins['date']          = now();
@@ -127,7 +131,7 @@ class HomeController extends Controller
         $ins['checkout_by']    = $user->id;
         Checkout::updateOrCreate(['item_id' => $item->id,'checkout_by'=>$user->id,'status'=>'pending'], $ins);
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();
-        $div = "<div class='card card-border' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+        $div = "<div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -154,7 +158,7 @@ class HomeController extends Controller
     public function CheckIn(Request $request)
     { 
         $checkinIds = explode(',', $request->check_in);
-        $isCheckin=Checkout::whereIn('id',$checkinIds)->update(['status' => 'taken']);
+        $isCheckin=Checkout::whereIn('id',$checkinIds)->update(['status' => 'taken','is_active'=>1]);
         if($isCheckin){
             return response()->json([
                 'status' => true,
@@ -178,7 +182,7 @@ class HomeController extends Controller
         $item=Checkout::where('id',$request->checkoutId)->delete();
         $user=User::where('member_id',$request->staff_id)->first();
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();
-        $div = "<div class='card card-border' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+        $div = "<div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -211,7 +215,7 @@ class HomeController extends Controller
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
               <h1 class='h2-text'>Waiting for Scanning the books</h1>
-            </div><div class='card card-border' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+            </div><div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -245,7 +249,7 @@ class HomeController extends Controller
     public function CheckOut(Request $request)
     { 
         $checkoutIds = explode(',', $request->check_out);
-        $isCheckout=Checkout::whereIn('id',$checkoutIds)->update(['status' => 'returned']);
+        $isCheckout=Checkout::whereIn('id',$checkoutIds)->update(['status' => 'returned','is_active'=>0]);
         if($isCheckout){
             return response()->json([
                 'status' => true,
