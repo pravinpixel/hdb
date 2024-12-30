@@ -305,6 +305,7 @@
       });
       $(document).on('click', '#taken', function() {
         ajaxStart();
+         $('#itemErr').html('');
          var type = $("input[name='type']").val(); 
          var staff_id = $("input[name='staff_id']").val();
          var check_in = $("input[name='check_in']").val();
@@ -319,7 +320,14 @@
                 _token: '{{ csrf_token() }}'
               },
               success: function(response) {
+              if(response.status==true){
               window.location.href = response.redirect_to;
+              }else{
+              $('#itemErr').html('');
+              $('#itemErr').append(response.err);
+                ajaxStop();
+                return; 
+              }
               },
               error: function(xhr, status, error) {
                      ajaxStop();

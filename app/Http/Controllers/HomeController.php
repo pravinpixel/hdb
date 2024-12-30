@@ -160,13 +160,20 @@ class HomeController extends Controller
         $checkinIds = explode(',', $request->check_in);
         $isCheckin=Checkout::whereIn('id',$checkinIds)->get();
         foreach($isCheckin as $checkin_data){
-            $checkin_data->status = 'taken';
-            $checkin_data->save();
+            
             $item=Item::find($checkin_data->item_id);
             if($item){
+                if($item->is_active == 1){
+                    return response()->json([
+                        'status' => false,
+                        'err' =>$item->item_ref. ' Item Already Taken. Please remove to create new checkout' 
+                    ]);
+                }
                 $item->is_active = 1;
                 $item->save();
             }
+            $checkin_data->status = 'taken';
+            $checkin_data->save();
         }
         if($isCheckin){
             return response()->json([
