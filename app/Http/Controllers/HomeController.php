@@ -45,7 +45,7 @@ class HomeController extends Controller
         if(!$user){
         return response()->json([
             'status' => false,
-            'err' => 'Staff id not found' 
+            'err' => 'You have keyed in an invalid ID. Please approach the admin to retrieve your ID' 
         ]);
         }
        if($request->type == 'check-in'){
@@ -158,7 +158,16 @@ class HomeController extends Controller
     public function CheckIn(Request $request)
     { 
         $checkinIds = explode(',', $request->check_in);
-        $isCheckin=Checkout::whereIn('id',$checkinIds)->update(['status' => 'taken','is_active'=>1]);
+        $isCheckin=Checkout::whereIn('id',$checkinIds)->get();
+        foreach($isCheckin as $checkin_data){
+            $checkin_data->status = 'taken';
+            $checkin_data->save();
+            $item=Item::find($checkin_data->item_id);
+            if($item){
+                $item->is_active = 1;
+                $item->save();
+            }
+        }
         if($isCheckin){
             return response()->json([
                 'status' => true,
@@ -249,7 +258,16 @@ class HomeController extends Controller
     public function CheckOut(Request $request)
     { 
         $checkoutIds = explode(',', $request->check_out);
-        $isCheckout=Checkout::whereIn('id',$checkoutIds)->update(['status' => 'returned','is_active'=>0]);
+        $isCheckout=Checkout::whereIn('id',$checkoutIds)->get();
+        foreach($isCheckout as $checkout_data){
+            $checkout_data->status = 'returned';
+            $checkout_data->save();
+            $item=Item::find($checkout_data->item_id);
+            if($item){
+                $item->is_active = 0;
+                $item->save();
+            }
+        }
         if($isCheckout){
             return response()->json([
                 'status' => true,
