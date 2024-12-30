@@ -30,7 +30,7 @@
       <div class="banner-img-check">
         <div class="container home-style">
           <div class="padd-text-h1">
-            <h1 class="h2-check-text">Welcome to HBD Library</h1>
+            <h1 class="h2-check-text">Welcome to HDB Library</h1>
           </div>
         <div class="banner-content">
           <div class="flex-cardsone">
