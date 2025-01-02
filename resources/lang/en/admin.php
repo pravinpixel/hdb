@@ -15,4 +15,5 @@ return [
     'date_of_return'          => 'Date of Return',
     'type'                    => 'Type',
     'approved'                => 'Approved',
+    'item_return'=> 'Item Return',
 ];

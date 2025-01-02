@@ -41,7 +41,7 @@ class HomeController extends Controller
     }
     public function verifyStaff(Request $request)
     { 
-        $user=User::where('member_id',$request->staff_id)->first();
+        $user=User::where('member_id',$request->staff_id)->where('is_active',1)->first();
         if(!$user){
         return response()->json([
             'status' => false,
@@ -267,6 +267,7 @@ class HomeController extends Controller
         $checkoutIds = explode(',', $request->check_out);
         $isCheckout=Checkout::whereIn('id',$checkoutIds)->get();
         foreach($isCheckout as $checkout_data){
+            $checkout_data->checkout_date=now();
             $checkout_data->status = 'returned';
             $checkout_data->save();
             $item=Item::find($checkout_data->item_id);
