@@ -65,7 +65,7 @@ class HomeController extends Controller
                  </div>
                  <div class='item_data' id='item_data'> </div>
                 <div class='btn-center-scan'>
-                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>submit</button>
+                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>Submit</button>
                 </div>
             </div>
         </div>";

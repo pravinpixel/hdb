@@ -89,7 +89,7 @@
           </section>
 
           <div class="btn-parent">
-            <div class="button-icon" style="cursor: pointer;" onclick="window.location.href='{{ env('ADMIN_LOGIN') }}'">
+           <div class="button-icon" style="cursor: pointer;" onclick="window.open('{{ env('ADMIN_LOGIN') }}', '_blank')">
               <div class="img-center">
                 <img src="{{asset('dark/assets/images/home/user.png')}}" class="img-user" />
                 <h4 class="login-h4">login</h4>
