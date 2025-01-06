@@ -48,6 +48,12 @@ class HomeController extends Controller
             'err' => 'You have keyed in an invalid ID. Please approach the admin to retrieve your ID' 
         ]);
         }
+        if(isset($user->roles[0]) && $user->roles[0]->id !=7){
+            return response()->json([
+                'status' => false,
+                'err' => 'You have keyed in an invalid ID. Please approach the admin to retrieve your ID' 
+            ]); 
+        }
        if($request->type == 'check-in'){
         $div = "
         <div class='card-staff-check'>
@@ -127,7 +133,8 @@ class HomeController extends Controller
         $ins['date']          = now();
         $ins['item_id']        = $item->id;
         $ins['title']        = $item->title;
-        $ins['date_of_return'] = Carbon::now()->addDays(21);
+        $period=isset($item->due_period)?$item->due_period : 21;
+        $ins['date_of_return'] = Carbon::now()->addDays($period);
         $ins['checkout_by']    = $user->id;
         Checkout::updateOrCreate(['item_id' => $item->id,'checkout_by'=>$user->id,'status'=>'pending'], $ins);
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();

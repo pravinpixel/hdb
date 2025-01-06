@@ -373,5 +373,50 @@
       });
     });
     </script>
+    <script>
+        // Disable left and right arrow keys
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                event.preventDefault();
+            }
+            // Disable F12 and Ctrl+Shift+I for developer tools
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.shiftKey && event.key === "C") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === "u") {
+                event.preventDefault();
+            }
+        });
+
+        // Disable right-click (context menu)
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        // Additional precautionary method to disable "Inspect Element" via key combo
+        document.addEventListener('keydown', function(event) {
+            // Disable Ctrl+Shift+I and F12 to prevent DevTools shortcuts
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.shiftKey && event.key === "C") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === "u") {
+                event.preventDefault();
+            }
+        });
+
+        // Alert the user if they attempt to open DevTools via a console log (as a final check)
+        (function() {
+            var devtools = /./;
+            devtools.toString = function () {
+                alert("Developer Tools are disabled!");
+            };
+        })();
+    </script>
   </body>
 </html>
