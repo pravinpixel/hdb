@@ -139,7 +139,7 @@
 
 .card-staff {
     backdrop-filter: blur(6.746665954589844px);
-    background-color: rgba(217, 217, 217, 0.149);
+    background-color: #FFFFFF;
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 90%;
@@ -354,7 +354,7 @@
 
 .card-staff-check {
     backdrop-filter: blur(6.746665954589844px);
-    background-color: rgba(217, 217, 217, 0.149);
+    background-color: #FFFFFF;
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 90%;
