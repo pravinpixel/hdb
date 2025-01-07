@@ -161,7 +161,7 @@
 
 .background-textbox:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    color: #FFFFFF; 
+    color: #000000; 
     outline: none;
     
 }
@@ -174,14 +174,14 @@
 
 .background-textbox:focus {
     background-color: rgba(255, 255, 255, 0.3); 
-    color: #FFFFFF; 
+    color: #000000; 
     border-color: rgba(254, 0, 11, 1); 
     outline: none;
 }
 
 .background-textbox:not(:focus) {
     background-color: rgba(255, 255, 255, 0.3); 
-    color: #FFFFFF; 
+    color: #000; 
     outline: none;
 }
 .btn-color-new {
