@@ -59,8 +59,8 @@ class HomeController extends Controller
         <div class='card-staff-check'>
             <div class='card-body-4 '>
                 <div class='padd-style-checkout-h2'>
-                  <h5 class='h2-text'>Welcome {$user->first_name}</h5><br>
-                    <h1 class='h2-text'>Enter Your BOOK ID</h1>
+
+                    <h1 class='h2-text'>Scan your Books</h1>
                 </div>
                 <div class='input-group mb-3'>
                     <input type='text' class='form-control background-textbox' placeholder='Scan your book on the RFID Pad' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' name='item_ref' id='scan-data'>

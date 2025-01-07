@@ -40,7 +40,7 @@
                   <image src="{{asset('dark/assets/images/home/iconone.png')}}" class="vect-img" /> 
                 </div>
                 <div class="img-content" id="check-out">
-                  <h5 class="card-title">Check out</h5>
+                  <h5 class="card-title">Check-Out(Borrow)</h5>
                   <image src="{{asset('dark/assets/images/home/arrow.png')}}" class="arrow-img" />  
                 </div>
               </div>
@@ -51,7 +51,7 @@
                   <image src="{{asset('dark/assets/images/home/icontwo.png')}}" class="vect-img" />
                 </div>
                 <div class="img-content">
-                  <h5 class="card-title">Check in</h5>
+                  <h5 class="card-title">Check-In(Return)</h5>
                   <image src="{{asset('dark/assets/images/home/arrow.png')}}" class="arrow-img" />
                 </div>
               </div>
