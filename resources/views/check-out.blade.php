@@ -37,7 +37,7 @@
               </div>
               <div class="padd-style-final-h2">
                 <h1 class="h2-text">
-                  The books have been successfully checked Out
+                  The books have been successfully checked in
                 </h1>
               </div>
               <div class="btn-center-final">
