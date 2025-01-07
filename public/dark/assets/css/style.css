@@ -38,7 +38,7 @@
 
 .card-new {
     backdrop-filter: blur(6.746665954589844px);
-    background-color: rgba(217, 217, 217, 0.149);
+    background-color:#FFFFFF;
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 450px;
@@ -61,7 +61,7 @@
     font-family: "Cabin", serif;
     text-align: center;
     margin-top: 50px;
-    color: rgba(255, 255, 255, 1);
+    /* color: rgba(255, 255, 255, 1); */
     font-weight: 700;
     font-size: 38px;
 }
