@@ -24,7 +24,7 @@
 
 .h2-text {
     font-family: "Cabin", serif;
-    color: #FFFFFF;
+    color: #000;
     font-weight: 700;
     font-size: 38px;
     text-align: center;
@@ -235,7 +235,7 @@
 
 .text-content {
     font-family: "Cabin", serif;
-    color: rgba(0, 0, 0, 1);
+    color: #000;
     font-weight: 400;
     font-size: 16px;
 }
@@ -254,7 +254,7 @@
     font-weight: 700;
     font-size: 38px;
     text-align: center;
-    color: rgba(255, 255, 255, 1);
+    color:#000;
 }
 .img-content {
     display: flex;
@@ -306,7 +306,7 @@
 }
 
 .login-h4 {
-    color: #FFFFFF;
+    color: #000000;
     font-family: "Cabin", serif;
     font-weight: 400;
     font-size: 18px;
@@ -341,7 +341,7 @@
 
 .h2-check-text {
     font-family: "Cabin", serif;
-    color: #FFFFFF;
+    color: #000;
     font-weight: 700;
     font-size: 30px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(1, 7, 7, 0.6);
