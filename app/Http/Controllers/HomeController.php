@@ -60,7 +60,7 @@ class HomeController extends Controller
             <div class='card-body-4 '>
                 <div class='padd-style-checkout-h2'>
 
-                    <h1 class='h2-text'>Scan your Books</h1>
+                    <h1 class='h2-text'>Scan your books</h1>
                 </div>
                 <div class='input-group mb-3'>
                     <input type='text' class='form-control background-textbox' placeholder='Scan your book on the RFID Pad' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' name='item_ref' id='scan-data'>
@@ -71,7 +71,7 @@ class HomeController extends Controller
                  </div>
                  <div class='item_data' id='item_data'> </div>
                 <div class='btn-center-scan'>
-                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>Submit</button>
+                    <button type='button' class='btn btn-color-new-bt padding-btn' id='taken'>Cancel</button>
                 </div>
             </div>
         </div>";
@@ -82,27 +82,30 @@ class HomeController extends Controller
             <div class='padd-style-checkout-h2'>
               <h1 class='h2-text'>Waiting for Scanning the books</h1>
             </div>
-            <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+            <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>
+            ";
+            
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
             $div .= "<div class='content-flex'>
                         <h4 class='text-content'>{$no}</h4>
-                        <h4 class='text-content'>{$checkout->title}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
+                        <h4 class='text-content'>{$checkout->title}</h4>
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
                         </div>
-                      </div>";
+                      </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
         $isButtonDisabled = count($checkout_id) == 0 ? 'disabled' : ''; 
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
                  <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
-        $div .= "</div></div><div class='btn-center btn-end-new'>
-              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Check out</button>
+        $div .= "</div></div><div class='btn-center btn-end-new gap-btn'>
+          <button type='button' class='btn btn-color-new-bt' id='return'>Clear & Cancel</button>
+              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
           </div>
         </div>";
@@ -138,7 +141,7 @@ class HomeController extends Controller
         $ins['checkout_by']    = $user->id;
         Checkout::updateOrCreate(['item_id' => $item->id,'checkout_by'=>$user->id,'status'=>'pending'], $ins);
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();
-        $div = "<div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+        $div = "<div class='card card-border scrollable-card-body-2' margin: 0 auto;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -205,7 +208,7 @@ class HomeController extends Controller
         $item=Checkout::where('id',$request->checkoutId)->delete();
         $user=User::where('member_id',$request->staff_id)->first();
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();
-        $div = "<div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+        $div = "<div class='card card-border scrollable-card-body'  margin: 0 auto; '><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -238,7 +241,7 @@ class HomeController extends Controller
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
               <h1 class='h2-text'>Waiting for Scanning the books</h1>
-            </div><div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto; height: 154px;'><div class='card-chekout'>";
+            </div><div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
@@ -258,7 +261,8 @@ class HomeController extends Controller
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
         <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new'>
-              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Check out</button>
+           <button type='button' class='btn btn-color-new-bt' id='return'>Clear & Cancel</button>
+              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
           </div>
         </div>";

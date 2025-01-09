@@ -16,13 +16,36 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('dark/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dark/assets/css/style.css')}}" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="header-image">
-        <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
-      </div>
+  <div class="container-fluid">
+   
+   <div class="container home-style">
+     <div class="header-image">
+     <div class="container">
+     <div class="row">
+   <div class="col">
+   <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
+   </div>
+   <div class="col">
+     <div class="header-new">
+   <h6 class="powered">Powered by</h6>
+   
+
+    <img src="{{asset('dark/assets/images/home/pack.png')}}" class="image-size-pack" />
+    <img src="{{asset('dark/assets/images/home/line.png')}}" class="image-size-line" />
+       <img src="{{asset('dark/assets/images/home/track.png')}}" class="image-size-track" />
+</div>
+   </div>
+   
+ </div>
+ </div>
+</div>
+     </div>
+   </div>
 
       <div class="banner-img-check">
         <div class="container home-style">
