@@ -242,7 +242,7 @@
          var type = $("input[name='type']").val(); 
          var staff_id = $("input[name='staff_id']").val();
          if(staff_id==""){
-         $('#staffErr').append('Staff id field is required');
+         $('#staffErr').append('The staff ID field is required.');
          ajaxStop();
          return; 
          } 
@@ -285,7 +285,7 @@
          var staff_id = $("input[name='staff_id']").val();
          var item_ref = $("input[name='item_ref']").val();
          if(item_ref==""){
-         $('#itemErr').append('Item id field is required');
+         $('#itemErr').append('The Book ID field is required.');
          ajaxStop();
          return; 
          } 
