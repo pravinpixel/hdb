@@ -79,7 +79,7 @@
             <div class="card-2">
               <div class="card-body-check-2">
                 <div>
-                  <h3 class="text-h3">How to check-in/check-out Library's resources:</h3>
+                  <h3 class="text-h3">How to check-out / check-in Library's resources:</h3>
                   <ul class="ul-text">
                     <li class="li-text">
                       <span class="steps"> Step 1:</span>
@@ -108,7 +108,7 @@
             <div class="button-icon" style="cursor: pointer;" onclick="window.location.href='{{ env('ADMIN_LOGIN') }}'">
               <div class="img-center">
                 <img src="{{asset('dark/assets/images/home/user.png')}}" class="img-user" />
-                <h4 class="login-h4">login</h4>
+                <h4 class="login-h4">Admin </br>  login</h4>
               </div>
             </div>
           </div>

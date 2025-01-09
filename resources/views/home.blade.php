@@ -392,7 +392,7 @@
       });
     });
     </script>
-    <!-- <script>
+   <script>
         // Disable left and right arrow keys
         document.addEventListener('keydown', function(event) {
             if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
@@ -436,6 +436,6 @@
                 alert("Developer Tools are disabled!");
             };
         })();
-    </script> -->
+    </script> 
   </body>
 </html>

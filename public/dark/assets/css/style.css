@@ -325,6 +325,7 @@
     font-weight: 400;
     font-size: 22px;
     text-align: center;
+    padding-bottom: 8px;
 }
 
 .span-date{
@@ -516,7 +517,7 @@
 }
 
 .padd-style-final-h2 {
-    padding: 23px 0;
+    padding: 18px 0;
 }
 
 .padding-btn {
