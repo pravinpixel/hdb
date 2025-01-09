@@ -120,13 +120,13 @@ class HomeController extends Controller
         if(!$item){
         return response()->json([
             'status' => false,
-            'err' => 'Item RFID not found' 
+            'err' => 'The Book ID field is required.' 
         ]);
         }
         if($item->is_active == 1){
             return response()->json([
                 'status' => false,
-                'err' => 'Item Already Taken' 
+                'err' => 'The Book has already been taken.' 
             ]);
         }
         $user=User::where('member_id',$request->staff_id)->first();
@@ -173,7 +173,7 @@ class HomeController extends Controller
                 if($item->is_active == 1){
                     return response()->json([
                         'status' => false,
-                        'err' =>$item->item_ref. ' Item Already Taken. Please remove to create new checkout' 
+                        'err' =>$item->item_ref. ' The Book has already been taken.' 
                     ]);
                 }
                 $item->is_active = 1;
