@@ -1,21 +1,52 @@
 .header-image {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #FFFFFF;
 }
 
 .container {
-    max-width: 1136px;
+    max-width: 1136px !important;
 }
 
 .body {
     position: relative;
 }
 
+.header-new{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.image-size {
+    width: 209px;
+    height: 49px;
+}
+
+.image-size-pack {
+    width: 75px;
+    height: 23px;
+}
+
+.image-size-track {
+    width: 70px;
+    height: 23px;
+}
+
+.powered {
+    font-family: "Cabin", serif;
+    color: #000000;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 10px;
+}
+.image-size-line{
+    height: 20px;
+}
 .padd-text-h2 {
-    padding: 40px 0; 
+    padding: 40px 0;
 }
 
 .padd-style-h2 {
@@ -33,18 +64,20 @@
 .flex-cardsone {
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 90px;
 }
 
 .card-new {
     backdrop-filter: blur(6.746665954589844px);
-    background-color:#FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 450px;
-    height: 280px;
+    height: 300px;
     margin-bottom: 30px;
     border-radius: 22px;
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
 }
 
 .sec-2 {
@@ -52,10 +85,17 @@
     display: flex;
     justify-content: center;
 }
+
 .card-body {
-    padding: 40px 0;
-    cursor: pointer !important;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding-top: 50px !important;
+    padding-bottom: 60px !important; */
+
+    }
 
 .card-title {
     font-family: "Cabin", serif;
@@ -83,19 +123,19 @@
 }
 
 .card-body-2 {
-    padding: 22px 38px 38px; 
+    padding: 22px 38px 38px;
 }
 
 .card-body-3 {
-    padding: 22px 38px 80px; 
+    padding: 22px 38px 80px;
 }
 
 .card-body-3-final {
-    padding: 60px 38px; 
+    padding: 60px 38px;
 }
 
 .card-body-4 {
-    padding: 22px 38px 30px; 
+    padding: 22px 38px 30px;
 }
 
 .card-body-check-2 {
@@ -152,7 +192,8 @@
     background-color: rgba(255, 255, 255, 0.3);
     height: 65px;
     text-align: center;
-    color: #000000;; 
+    color: #000000;
+    ;
     border: 1px solid transparent;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     outline: none;
@@ -161,9 +202,9 @@
 
 .background-textbox:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    color: #000000; 
+    color: #000000;
     outline: none;
-    
+
 }
 
 .background-textbox::placeholder {
@@ -173,17 +214,18 @@
 }
 
 .background-textbox:focus {
-    background-color: rgba(255, 255, 255, 0.3); 
-    color: #000000; 
-    border-color: rgba(254, 0, 11, 1); 
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000000;
+    border-color: rgba(254, 0, 11, 1);
     outline: none;
 }
 
 .background-textbox:not(:focus) {
-    background-color: rgba(255, 255, 255, 0.3); 
-    color: #000; 
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
     outline: none;
 }
+
 .btn-color-new {
     background-color: rgba(254, 0, 11, 1);
     color: #FFFFFF;
@@ -192,21 +234,23 @@
     outline: none !important;
     padding: 12px;
 }
+
 .btn-color-new:hover {
-    outline: none; 
-    box-shadow: 0 0 0 3px rgba(254, 0, 11, 0.5); 
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(254, 0, 11, 0.5);
     color: #FFFFFF;
 }
+
 .btn-color-new:focus {
-    outline: none; 
+    outline: none;
     box-shadow: 0 0 0 3px rgba(254, 0, 11, 0.5);
     color: #FFFFFF;
 }
 
 .btn-color-new:active {
-    background-color: rgba(200, 0, 8, 1); 
-    outline: none; 
-    box-shadow: none; 
+    background-color: rgba(200, 0, 8, 1);
+    outline: none;
+    box-shadow: none;
     color: #FFFFFF;
 }
 
@@ -240,23 +284,27 @@
     font-weight: 400;
     font-size: 16px;
 }
+
 .flex-checkout {
     margin-left: auto;
     margin-bottom: 10px;
 }
+
 .card-chekout {
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .final-text {
     font-family: "Cabin", serif;
     font-weight: 700;
     font-size: 38px;
     text-align: center;
-    color:#000;
+    color: #000;
 }
+
 .img-content {
     display: flex;
     justify-content: center;
@@ -276,9 +324,9 @@
 
 
 .scrollable-card-body {
-    height: 200px; 
-    overflow-y: auto; 
-  } 
+    height: 200px;
+    overflow-y: auto;
+}
 
 .home-style {
     position: relative;
@@ -302,15 +350,15 @@
 }
 
 .img-user {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 
 .login-h4 {
-    color: #000000;
+    color: #FFFFFF;
     font-family: "Cabin", serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     margin-top: 0px;
 }
@@ -330,8 +378,8 @@
     background-image: url('../images/home/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 100vh; */
-    /* aspect-ratio: 1600 / 789;  */
+     /* height: 80vh;  */
+     aspect-ratio: 1600 / 789;  
 }
 
 .padd-text-h1 {
@@ -342,12 +390,12 @@
 
 .h2-check-text {
     font-family: "Cabin", serif;
-    color: #000;
+    color: #000000;
     font-weight: 700;
     font-size: 30px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(1, 7, 7, 0.6);
-     /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 100%, rgba(1, 7, 7, 0.6) 100%);   */
-     /* backdrop-filter: blur(10px);     */
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(1, 7, 7, 0.6); */
+    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 100%, rgba(1, 7, 7, 0.6) 100%);   */
+    /* backdrop-filter: blur(10px);     */
     /* border-radius: 100%; */
     text-align: center;
     width: max-content;
@@ -364,28 +412,31 @@
     border-radius: 22px;
     margin: 0 auto;
 }
+
 .padd-style-checkout-h2 {
     padding: 18px 0;
 }
 
 .padd-style-final-h2 {
-    padding: 23px 0; 
+    padding: 23px 0;
 }
 
-.padding-btn{
+.padding-btn {
     padding: 0.5rem 1.5rem;
 }
 
-.like-img{
+.like-img {
     width: 53px;
     height: 59px;
-   
+
 }
-.thumbs-up{
+
+.thumbs-up {
     display: flex;
     justify-content: center;
 }
-.btn-parent{
+
+.btn-parent {
     display: flex;
     justify-content: center;
 }
@@ -410,6 +461,7 @@
         margin-bottom: 30px;
         border-radius: 22px;
     }
+
     .content-flex {
         display: flex;
         align-items: center;
@@ -417,7 +469,7 @@
     }
 }
 
- @media (max-width: 1240px) {
+@media (max-width: 1240px) {
     .button-icon {
         background-color: rgba(254, 0, 11, 1);
         width: 83px;
@@ -427,5 +479,5 @@
         top: -7px;
         bottom: 35px;
         right: 0%;
-    } 
-} 
+    }
+}

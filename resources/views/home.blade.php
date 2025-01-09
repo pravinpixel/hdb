@@ -16,6 +16,8 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('dark/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dark/assets/css/style.css')}}" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  
   </head>
   <body>
@@ -23,10 +25,30 @@
       <div class="loader"></div>
     </div>
     <div class="container-fluid">
+   
+    <div class="container home-style">
       <div class="header-image">
-        <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
-      </div>
+      <div class="container">
+      <div class="row">
+    <div class="col">
+    <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
+    </div>
+    <div class="col">
+      <div class="header-new">
+    <h6 class="powered">Powered by</h6>
+    
 
+     <img src="{{asset('dark/assets/images/home/pack.png')}}" class="image-size-pack" />
+     <img src="{{asset('dark/assets/images/home/line.png')}}" class="image-size-line" />
+        <img src="{{asset('dark/assets/images/home/track.png')}}" class="image-size-track" />
+</div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+      </div>
+    </div>
       <div class="banner-img-check">
         <div class="container home-style">
           <div class="padd-text-h1">
@@ -36,23 +58,21 @@
           <div class="flex-cardsone">
             <div class="card-new" id="check-in"> 
               <div class="card-body">
-                <div class="img-vect">
-                  <image src="{{asset('dark/assets/images/home/iconone.png')}}" class="vect-img" /> 
+                 <div class="img-vect">
+                  <image src="{{asset('dark/assets/images/home/imgup.png')}}" class="vect-img" /> 
                 </div>
                 <div class="img-content" id="check-out">
-                  <h5 class="card-title">Check-Out(Borrow)</h5>
-                  <image src="{{asset('dark/assets/images/home/arrow.png')}}" class="arrow-img" />  
-                </div>
-              </div>
+                  <h5 class="card-title">Check-Out (Borrow)</h5>
+                </div> 
+              </div> 
             </div>
             <div class="card-new" id="check-out">
               <div class="card-body">
                 <div class="img-vect">
-                  <image src="{{asset('dark/assets/images/home/icontwo.png')}}" class="vect-img" />
+                <image src="{{asset('dark/assets/images/home/imgd.png')}}" class="vect-img" /> 
                 </div>
                 <div class="img-content">
-                  <h5 class="card-title">Check-In(Return)</h5>
-                  <image src="{{asset('dark/assets/images/home/arrow.png')}}" class="arrow-img" />
+                  <h5 class="card-title">Check-In (Return)</h5>
                 </div>
               </div>
             </div>
@@ -373,7 +393,7 @@
       });
     });
     </script>
-    <script>
+    <!-- <script>
         // Disable left and right arrow keys
         document.addEventListener('keydown', function(event) {
             if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
@@ -417,6 +437,6 @@
                 alert("Developer Tools are disabled!");
             };
         })();
-    </script>
+    </script> -->
   </body>
 </html>
