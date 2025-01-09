@@ -99,8 +99,7 @@
                     </li>
                     <li class="li-text">
                       <span class="steps"> Step -4:</span>
-                      Check that all the books have been successfully scanned by the system and click check-out/check-in
-                      to complete the check-in/check-out process
+                      Check that all the books have been successfully scanned by the system and click confirm to complete the process
                     </li>
                   </ul>
                 </div>
