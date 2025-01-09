@@ -83,22 +83,22 @@
             <div class="card-2">
               <div class="card-body-check-2">
                 <div>
-                  <h3 class="text-h3">How to check-in/check-out Library's resources:</h3>
+                  <h3 class="text-h3">How to check-out / check-in Library's resources:</h3>
                   <ul class="ul-text">
                     <li class="li-text">
-                      <span class="steps"> Step -1:</span>
-                      Click 'check-out/check-in' to begin.
+                      <span class="steps"> Step 1:</span>
+                      Click check-out/check-in to begin.
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -2:</span>
+                      <span class="steps"> Step 2:</span>
                       Key in your Staff ID number
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -3:</span>
-                      Scan the books you would like to check-in/check-out one by one on the RFID pad
+                      <span class="steps"> Step 3:</span>
+                      Scan the books you would like to check-out / check-in one by one on the RFID pad
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -4:</span>
+                      <span class="steps"> Step 4:</span>
                       Check that all the books have been successfully scanned by the system and click confirm to complete the process
                     </li>
                   </ul>

@@ -71,7 +71,7 @@ class HomeController extends Controller
                  </div>
                  <div class='item_data' id='item_data'> </div>
                 <div class='btn-center-scan'>
-                    <button type='button' class='btn btn-color-new-bt padding-btn' id='taken'>Cancel</button>
+                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>Check-out</button>
                 </div>
             </div>
         </div>";
@@ -148,8 +148,8 @@ class HomeController extends Controller
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
             $div .= "<div class='content-flex'>
                         <h4 class='text-content'>{$no}</h4>
-                        <h4 class='text-content'>{$checkout->title}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
+                        <h4 class='text-content'>{$checkout->title}</h4>
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='deleteCheckout({$checkout->id})'/>
                         </div>
@@ -215,8 +215,8 @@ class HomeController extends Controller
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
             $div .= "<div class='content-flex'>
                         <h4 class='text-content'>{$no}</h4>
-                        <h4 class='text-content'>{$checkout->title}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
+                        <h4 class='text-content'>{$checkout->title}</h4>
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='deleteCheckout({$checkout->id})' />
                         </div>
@@ -248,8 +248,8 @@ class HomeController extends Controller
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
             $div .= "<div class='content-flex'>
                         <h4 class='text-content'>{$no}</h4>
-                        <h4 class='text-content'>{$checkout->title}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
+                        <h4 class='text-content'>{$checkout->title}</h4>
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
                         </div>

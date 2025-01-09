@@ -27,10 +27,10 @@
      <div class="header-image">
      <div class="container">
      <div class="row">
-   <div class="col">
+     <div class="col-md-6 col-sm-12">
    <img src="{{asset('dark/assets/images/home/houseimg.png')}}" class="image-size" />
    </div>
-   <div class="col">
+   <div class="col-md-6 col-sm-12">
      <div class="header-new">
    <h6 class="powered">Powered by</h6>
    
@@ -63,6 +63,12 @@
                   The books have been successfully checked in
                 </h1>
               </div>
+              <div class="padd-style-final-h2">
+              <h1 class="h2-text-due">
+                  Due date: 
+                  <span class="span-date">12-12-2024</span>
+                </h1>
+            </div>
               <div class="btn-center-final">
               <button type="button" class="btn btn-color-new" onclick="window.location.href='{{ env('APP_URL') }}';">Back to Home</button>
               </div>
@@ -73,22 +79,22 @@
             <div class="card-2">
               <div class="card-body-check-2">
                 <div>
-                  <h3 class="text-h3">How to check-in/check-out Library's resources:</h3>
+                  <h3 class="text-h3">How to check-out / check-in Library's resources:</h3>
                   <ul class="ul-text">
                     <li class="li-text">
-                      <span class="steps"> Step -1:</span>
-                      Click 'check-out/check-in' to begin.
+                      <span class="steps"> Step 1:</span>
+                      Click check-out/check-in to begin.
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -2:</span>
+                      <span class="steps"> Step 2:</span>
                       Key in your Staff ID number
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -3:</span>
-                      Scan the books you would like to check-in/check-out one by one on the RFID pad
+                      <span class="steps"> Step 3:</span>
+                      Scan the books you would like to check-out / check-in one by one on the RFID pad
                     </li>
                     <li class="li-text">
-                      <span class="steps"> Step -4:</span>
+                      <span class="steps"> Step 4:</span>
                       Check that all the books have been successfully scanned by the system and click confirm to complete the process
                     </li>
                   </ul>
