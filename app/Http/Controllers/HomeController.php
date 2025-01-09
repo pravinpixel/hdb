@@ -80,7 +80,7 @@ class HomeController extends Controller
         $div = "<div class='card-staff-check'>
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
-              <h1 class='h2-text'>Waiting for Scanning the books</h1>
+              <h1 class='h2-text'>Book list for check-in</h1>
             </div>
             <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>
             ";
@@ -240,7 +240,7 @@ class HomeController extends Controller
         $div = "<div class='card-staff-check'>
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
-              <h1 class='h2-text'>Waiting for Scanning the books</h1>
+              <h1 class='h2-text'>Book list for check-out</h1>
             </div><div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>";
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
