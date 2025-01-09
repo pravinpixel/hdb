@@ -63,6 +63,12 @@
                   The books have been successfully checked out
                 </h1>
               </div>
+              <div class="padd-style-final-h2">
+              <h1 class="h2-text-due">
+                  Due date: 
+                  <span class="span-date">12-12-2024</span>
+                </h1>
+            </div>
               <div class="btn-center-final">
               <button type="button" class="btn btn-color-new" onclick="window.location.href='{{ env('APP_URL') }}';">Back to Home</button>
               </div>
