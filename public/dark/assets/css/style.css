@@ -76,11 +76,11 @@
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 450px;
-    height: 300px;
-    margin-bottom: 30px;
+    height: 238px;
+    margin-bottom: 15px;
     border-radius: 22px;
-    padding-top: 50px !important;
-    padding-bottom: 60px !important;
+    padding-top: 33px !important;
+    padding-bottom: 50px !important;
 }
 
 .sec-2 {
@@ -103,7 +103,7 @@
 .card-title {
     font-family: "Cabin", serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 35px;
     /* color: rgba(255, 255, 255, 1); */
     font-weight: 700;
     font-size: 38px;
@@ -113,7 +113,7 @@
     background-color: rgba(255, 255, 255, 1);
     width: 90%;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .card-3 {
@@ -126,19 +126,19 @@
 }
 
 .card-body-2 {
-    padding: 22px 38px 38px;
+    padding: 0px 38px 20px;
 }
 
 .card-body-3 {
-    padding: 22px 38px 40px !important;
+    padding: 0px 38px 15px !important;
 }
 
 .card-body-3-final {
-    padding: 60px 38px;
+    padding: 20px 38px;
 }
 
 .card-body-4 {
-    padding: 22px 38px 30px;
+    padding: 0px 38px 15px;
 }
 
 .card-body-check-2 {
@@ -182,7 +182,16 @@
 
 .hr-tag {
     margin: 2.5px !important;
-    color: #E0E0E0;
+    color:#000000;
+}
+.content-widthadjust > h4:nth-child(1){
+    width: 10%;
+}
+.content-widthadjust > h4:nth-child(2){
+    width: 40%;
+}
+.content-widthadjust > h4:nth-child(3){
+    width: 40%;
 }
 
 .card-staff {
@@ -284,7 +293,7 @@
 
 .btn-center {
     text-align: center !important;
-    padding-top: 35px !important;
+    /* padding-top: 35px !important; */
 }
 
 .btn-color-new-bt {
@@ -363,7 +372,7 @@
 
 .btn-center-scan {
     text-align: center !important;
-    padding-top: 90px !important;
+    padding-top: 0px !important;
 }
 
 .card-border {
@@ -377,6 +386,7 @@
 }
 
 .gap-btn {
+    margin-top: 10px;
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -477,12 +487,15 @@
     background-image: url('../images/home/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 80vh;  */
-    aspect-ratio: 1600 / 789;
+    /* height: 100%; */
+    /* width: 100%; */
+    background-color: #CFE6F4;
+    min-height: 85vh;
+    background-position: center;
 }
 
 .padd-text-h1 {
-    padding: 40px 0;
+    padding: 25px 0;
     display: flex;
     justify-content: center;
 }
@@ -516,9 +529,9 @@
     padding: 18px 0;
 }
 
-.padd-style-final-h2 {
-    padding: 18px 0;
-}
+/* .padd-style-final-h2 {
+    padding: 10px 0;
+} */
 
 .padding-btn {
     padding: 0.5rem 1.5rem;
