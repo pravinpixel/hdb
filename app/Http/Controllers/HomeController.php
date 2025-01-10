@@ -70,7 +70,7 @@ class HomeController extends Controller
                  <input type='hidden' name='staff_id' value='{$request->staff_id}'> 
                  </div>
                  <div class='item_data' id='item_data'> </div>
-                <div class='btn-center-scan'>
+                <div class='btn-center btn-end-new gap-btn'>
                     <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
                     <button type='button' class='btn btn-color-new padding-btn' id='taken'>Confirm</button>
                 </div>
@@ -309,8 +309,10 @@ class HomeController extends Controller
     public function CheckOutClear(Request $request)
     {   
         if($request->type=='check-in'){
-        $check_outIds = explode(',', $request->check_out);
+        if(isset($request->check_out) && !empty($request->check_out)){
+         $check_outIds = explode(',', $request->check_out);
          Checkout::whereIn('id',$check_outIds)->delete();
+        }
             return response()->json([
                 'status' => true,
                 'data' => '' ,
