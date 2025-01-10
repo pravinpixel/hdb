@@ -52,7 +52,7 @@
       <div class="banner-img-check">
         <div class="container home-style">
           <div class="padd-text-h1">
-            <h1 class="h2-check-text">Welcome to HDB Library</h1>
+            <h1 class="h2-check-text" id="display-heading">Welcome to HDB Library</h1>
           </div>
         <div class="banner-content">
           <div class="flex-cardsone">
@@ -222,6 +222,7 @@
               success: function(response) {
                $('.flex-cardsone').remove();
                $('.banner-content').html(response.data); 
+               $('#display-heading').hide();
               },
               error: function(xhr, status, error) {
                      ajaxStop();
