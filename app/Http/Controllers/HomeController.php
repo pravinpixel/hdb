@@ -77,7 +77,9 @@ class HomeController extends Controller
             </div>
         </div>";
        }else{
-        $checkouts=Checkout::where('checkout_by',$user->id)->where('status','taken')->get();
+        $checkouts=Checkout::with(['item' => function ($query) {
+            $query->withTrashed();  
+        }])->where('checkout_by',$user->id)->where('status','taken')->get();
         $div = "<div class='card-staff-check'>
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
