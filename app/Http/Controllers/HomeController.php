@@ -186,7 +186,7 @@ class HomeController extends Controller
             $checkin_data->status = 'taken';
             $checkin_data->save();
         }
-        if($isCheckin){
+        if(isset($isCheckin) && count($isCheckin)>0){
             return response()->json([
                 'status' => true,
                 'data' => 'Successfully check-in' ,
@@ -195,7 +195,7 @@ class HomeController extends Controller
         }else{
             return response()->json([
                 'status' => false,
-                'err' => 'Server Error' 
+                
             ]);
         }
        
