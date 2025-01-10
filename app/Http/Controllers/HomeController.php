@@ -21,7 +21,7 @@ class HomeController extends Controller
             <div class='padd-style-checkout-h2'>
                 <h1 class='h2-text'>Enter Your Staff ID</h1>
             </div>
-            <div class='input-group mb-3'>
+            <div class='input-group '>
                 <input type='text' class='form-control background-textbox' name='staff_id' placeholder='eg. V15267' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default'>
                
             </div>
