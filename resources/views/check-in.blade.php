@@ -66,7 +66,8 @@
               <div class="padd-style-final-h2">
               <h1 class="h2-text-due">
                   Due date: 
-                  <span class="span-date">12-12-2024</span>
+                  <span class="span-date">{{ Carbon\Carbon::now()->addDays(21)->format('d-m-Y') }}
+</span>
                 </h1>
             </div>
               <div class="btn-center-final">

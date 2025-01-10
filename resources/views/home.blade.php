@@ -300,9 +300,10 @@
               },
               success: function(response) {
               if(response.status==true){
-                $('#itemErr').html('');
+              $("input[name='item_ref']").val('');
+                 $('#itemErr').html('');
                  $('#item_data').html(''); 
-                $('#item_data').html(response.data); 
+                 $('#item_data').html(response.data); 
               }else{
               $('#itemErr').html('');
               $('#itemErr').append(response.err);
@@ -390,6 +391,36 @@
               }
         });
       });
+       $(document).on('click', '#clear_function', function() {
+        ajaxStart();
+         var type = $("input[name='type']").val(); 
+         var staff_id = $("input[name='staff_id']").val();
+         var check_in = $("input[name='check_in']").val();
+        $.ajax({
+              url: '{{ url('check-out-clear') }}', 
+              type: 'POST', 
+              dataType: 'json', 
+              data: { 
+                type: type,
+                staff_id:staff_id,
+                check_out:check_in,
+                _token: '{{ csrf_token() }}'
+              },
+              success: function(response) {
+              window.location.href = response.redirect_to;
+              },
+              error: function(xhr, status, error) {
+                     ajaxStop();
+                console.error('Error:', error);
+              },
+              beforeSend: function() {
+                     ajaxStart();
+              },
+              complete: function() { 
+                     ajaxStop();
+              }
+        });
+      });
     });
     </script>
    <script>
@@ -436,6 +467,6 @@
                 alert("Developer Tools are disabled!");
             };
         })();
-    </script> 
+   </script> 
   </body>
 </html>

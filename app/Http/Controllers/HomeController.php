@@ -71,7 +71,8 @@ class HomeController extends Controller
                  </div>
                  <div class='item_data' id='item_data'> </div>
                 <div class='btn-center-scan'>
-                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>Check-out</button>
+                    <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
+                    <button type='button' class='btn btn-color-new padding-btn' id='taken'>Confirm</button>
                 </div>
             </div>
         </div>";
@@ -89,7 +90,7 @@ class HomeController extends Controller
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
-            $div .= "<div class='content-flex'>
+            $div .= "<div class='content-flex content-widthadjust'>
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
@@ -104,7 +105,7 @@ class HomeController extends Controller
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
                  <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new gap-btn'>
-          <button type='button' class='btn btn-color-new-bt' id='return'>Clear & Cancel</button>
+          <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
               <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
           </div>
@@ -146,7 +147,7 @@ class HomeController extends Controller
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
-            $div .= "<div class='content-flex'>
+            $div .= "<div class='content-flex content-widthadjust' >
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
@@ -213,7 +214,7 @@ class HomeController extends Controller
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
-            $div .= "<div class='content-flex'>
+            $div .= "<div class='content-flex content-widthadjust'>
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
@@ -246,7 +247,7 @@ class HomeController extends Controller
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
-            $div .= "<div class='content-flex'>
+            $div .= "<div class='content-flex content-widthadjust'>
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
@@ -261,7 +262,7 @@ class HomeController extends Controller
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
         <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new'>
-           <button type='button' class='btn btn-color-new-bt' id='return'>Clear & Cancel</button>
+           <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
               <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
           </div>
@@ -303,6 +304,25 @@ class HomeController extends Controller
     }
     public function CheckOutSuccess()
     {   
+        return view('check-out');
+    }
+    public function CheckOutClear(Request $request)
+    {   
+        if($request->type=='check-in'){
+        $check_outIds = explode(',', $request->check_out);
+         Checkout::whereIn('id',$check_outIds)->delete();
+            return response()->json([
+                'status' => true,
+                'data' => '' ,
+                'redirect_to'=>'/'
+            ]);
+        }else{
+            return response()->json([
+                'status' => true,
+                'data' => '' ,
+                'redirect_to'=>'/'
+            ]);
+        }
         return view('check-out');
     }
     

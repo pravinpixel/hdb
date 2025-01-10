@@ -31,5 +31,6 @@ Route::post('item-unset', [HomeController::class, 'ItemUnset'])->name('item.unse
 Route::get('check-in-success', [HomeController::class, 'CheckInSuccess'])->name('check.in.success');
 
 Route::get('check-out-success', [HomeController::class, 'CheckOutSuccess'])->name('check.out.success');
+Route::post('check-out-clear', [HomeController::class, 'CheckOutClear'])->name('check.out.clear');
 
 
