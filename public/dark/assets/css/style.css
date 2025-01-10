@@ -1,11 +1,14 @@
 .header-image {
     /* display: flex; */
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 22px;
+    padding-bottom: 22px;
     background-color: #FFFFFF;
 }
-
+.header-image > div > div:nth-child(1){
+    display: flex;
+    align-items: center;
+}
 .container {
     max-width: 1136px !important;
 }
@@ -60,7 +63,7 @@
     font-family: "Cabin", serif;
     color: #000;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -76,11 +79,12 @@
     box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
     width: 450px;
-    height: 238px;
+    height: 178px;
     margin-bottom: 15px;
     border-radius: 22px;
-    padding-top: 33px !important;
-    padding-bottom: 50px !important;
+    padding: 20px;
+    /* padding-top: 33px !important;
+    padding-bottom: 50px !important; */
 }
 
 .sec-2 {
@@ -106,7 +110,7 @@
     margin-top: 35px;
     /* color: rgba(255, 255, 255, 1); */
     font-weight: 700;
-    font-size: 38px;
+    font-size: 25px;
 }
 
 .card-2 {
@@ -126,7 +130,7 @@
 }
 
 .card-body-2 {
-    padding: 0px 38px 20px;
+    padding: 0px 38px 15px;
 }
 
 .card-body-3 {
@@ -142,7 +146,7 @@
 }
 
 .card-body-check-2 {
-    padding: 22px 38px 18px;
+    padding: 18px 38px 16px;
 }
 
 .text-h3 {
@@ -176,13 +180,15 @@
 }
 
 .vect-img {
-    width: 75px;
-    height: 90px;
+    width: 60px;
+    height: 70px;
 }
 
 .hr-tag {
-    margin: 2.5px !important;
+    /* margin: 2.5px !important; */
     color:#000000;
+    margin-top: -0.5px;
+    margin-bottom: 7px;
 }
 .content-widthadjust > h4:nth-child(1){
     width: 10%;
@@ -268,8 +274,9 @@
     font-family: "Cabin", serif !important;
     border-radius: 8px !important;
     outline: none !important;
-    padding: 12px 24px !important;
+    padding: 8px 24px !important;
     font-size: 22px !important;
+    min-width: 150px;
 }
 
 .btn-color-new:hover {
@@ -495,7 +502,7 @@
 }
 
 .padd-text-h1 {
-    padding: 25px 0;
+    padding: 18px 0;
     display: flex;
     justify-content: center;
 }
@@ -526,7 +533,7 @@
 }
 
 .padd-style-checkout-h2 {
-    padding: 18px 0;
+    padding: 10px 0;
 }
 
 /* .padd-style-final-h2 {
@@ -613,3 +620,24 @@
     text-align: center;
     }
 }
+/* 
+@media (max-width:1400px){
+    .padd-text-h1{
+        padding: 12px 0;
+    }
+    .card-new {
+        height:198px
+    }
+    .card-title{
+        margin-top: 15px;
+    }
+    .sec-2{
+        margin-top: 19px;
+    }
+    .card-body-check-2 {
+        padding: 10px 38px 9px;
+    }
+    .banner-img-check{
+        min-height: 80vh;
+    }
+} */
