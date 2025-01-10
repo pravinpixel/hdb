@@ -154,7 +154,7 @@ class HomeController extends Controller
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='deleteCheckout({$checkout->id})'/>
                         </div>
-                      </div>";
+                      </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
@@ -221,7 +221,7 @@ class HomeController extends Controller
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='deleteCheckout({$checkout->id})' />
                         </div>
-                      </div>";
+                      </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
@@ -254,7 +254,7 @@ class HomeController extends Controller
                         <div class='flex-checkout' style='cursor: pointer;'>
                             <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
                         </div>
-                      </div>";
+                      </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
