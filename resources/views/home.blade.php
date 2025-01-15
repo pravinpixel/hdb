@@ -24,6 +24,7 @@
     <div class="load-bg">
       <div class="loader"></div>
     </div>
+    <div class="header-fixed">
     <div class="container-fluid">
    
     <div class="container home-style">
@@ -43,13 +44,14 @@
         <img src="{{asset('dark/assets/images/home/track.png')}}" class="image-size-track" />
 </div>
     </div>
-    
+    </div>
   </div>
   </div>
 </div>
       </div>
     </div>
       <div class="banner-img-check">
+        <div class='home-sections'>
         <div class="container home-style">
           <div class="padd-text-h1">
             <h1 class="h2-check-text" id="display-heading">Welcome to HDB Library</h1>
@@ -114,6 +116,7 @@
                 <h4 class="login-h4"> Admin </br> login</h4>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

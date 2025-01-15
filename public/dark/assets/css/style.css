@@ -18,6 +18,13 @@
 
 }
 
+.header-fixed{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+}
+
 .header-new {
     display: flex;
     align-items: center;
@@ -80,7 +87,7 @@
     /* box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset; */
     width: 450px;
-    height: 232px;
+    height: 235px;
     margin-bottom: 15px;
     border-radius: 22px;
     padding: 20px;
@@ -119,7 +126,7 @@
     background-color: rgba(255, 255, 255, 1);
     width: 90%;
     border-radius: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 13px;
 }
 
 .card-3 {
@@ -458,7 +465,7 @@
     border-radius: 100%;
     position: absolute;
     right: -4%;
-    bottom: 18px;
+    bottom: 13px;
 }
 
 .img-center {
@@ -493,14 +500,18 @@
 /* re-work */
 
 .banner-img-check {
-    background-image: url('../images/home/banner.jpg');
+    background-image: url('../images/home/banner.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     /* height: 100%; */
     /* width: 100%; */
     background-color: #CFE6F4;
-    min-height: 85vh;
-    background-position: 100% 100% ;
+    min-height: 100vh;
+    /* background-position: center ; */
+}
+
+.home-sections{
+    padding-top: 90px;
 }
 
 .padd-text-h1 {
@@ -525,8 +536,8 @@
 .card-staff-check {
     backdrop-filter: blur(6.746665954589844px);
     background-color: #FFFFFF;
-    box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
-    box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset;
+    /* box-shadow: -25.33px 25.33px 25.33px 0px rgba(255, 255, 255, 0.15) inset;
+    box-shadow: 25.33px -25.33px 25.33px 0px rgba(165, 165, 165, 0.15) inset; */
     width: 90%;
     /* height: 360px; */
     margin-bottom: 30px;
@@ -564,6 +575,12 @@
 
 /* responsive */
 
+@media (max-width: 517px) {
+    .home-sections {
+        padding-top: 123px !important;
+    }
+    
+}
 @media (max-width: 992px) {
     .flex-cardsone {
         display: flex;
@@ -663,7 +680,7 @@
     .text-h3 {
         font-size: 20px !important;
     }
-    .banner-img-check{
+    /* .banner-img-check{
         min-height: 84vh !important;
-    }
+    } */
 }
