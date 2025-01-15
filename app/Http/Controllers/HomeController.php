@@ -132,7 +132,7 @@ class HomeController extends Controller
         if($item->is_active == 1){
             return response()->json([
                 'status' => false,
-                'err' => 'The Book has already been taken.' 
+                'err' => 'Scan Book is not available.' 
             ]);
         }
         $user=User::where('member_id',$request->staff_id)->first();
@@ -179,7 +179,7 @@ class HomeController extends Controller
                 if($item->is_active == 1){
                     return response()->json([
                         'status' => false,
-                        'err' =>$item->item_ref. ' The Book has already been taken.' 
+                        'err' =>$item->item_ref. ' Scan Book is not available.' 
                     ]);
                 }
                 $item->is_active = 1;
