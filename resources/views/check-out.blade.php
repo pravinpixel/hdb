@@ -21,6 +21,7 @@
  
   </head>
   <body>
+  <div class="header-fixed">
   <div class="container-fluid">
    
    <div class="container home-style">
@@ -44,10 +45,12 @@
  </div>
  </div>
 </div>
+</div>
      </div>
    </div>
 
       <div class="banner-img-check">
+      <div class='home-sections'>
         <div class="container home-style">
           <div class="padd-text-h1">
             <!-- <h1 class="h2-check-text">Welcome to HDB Library</h1> -->
@@ -108,7 +111,7 @@
           </div>
         </div>
       </div>
-
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="{{ asset('dark/assets/js/bootstrap.min.js')}}"></script>

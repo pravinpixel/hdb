@@ -680,6 +680,17 @@
     .text-h3 {
         font-size: 20px !important;
     }
+    .h2-text{
+        font-size: 20px !important;
+    }
+    .like-img {
+        width: 48px;
+        height: 48px;
+    
+    }
+    .h2-text-due{
+        font-size: 18px !important;
+    }
     /* .banner-img-check{
         min-height: 84vh !important;
     } */
@@ -688,5 +699,17 @@
     .card-new{
         height: 210px !important;
         margin-bottom: 0px !important;
+    }
+    .h2-text{
+        font-size: 20px !important;
+    }
+
+    .h2-text-due{
+        font-size: 18px !important;
+    }
+    .like-img {
+        width: 48px;
+        height: 48px;
+    
     }
 }
