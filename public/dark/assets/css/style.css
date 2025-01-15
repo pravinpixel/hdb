@@ -684,3 +684,9 @@
         min-height: 84vh !important;
     } */
 }
+@media (min-width: 1301px) and (max-width: 1420px) {
+    .card-new{
+        height: 210px !important;
+        margin-bottom: 0px !important;
+    }
+}
