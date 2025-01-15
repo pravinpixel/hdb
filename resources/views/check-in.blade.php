@@ -34,10 +34,9 @@
      <div class="header-new">
    <h6 class="powered">Powered by</h6>
    
-
     <img src="{{asset('dark/assets/images/home/pack.png')}}" class="image-size-pack" />
     <img src="{{asset('dark/assets/images/home/line.png')}}" class="image-size-line" />
-       <img src="{{asset('dark/assets/images/home/track.png')}}" class="image-size-track" />
+    <img src="{{asset('dark/assets/images/home/track.png')}}" class="image-size-track" />
 </div>
 </div>
    </div>
@@ -87,7 +86,7 @@
                   <ul class="ul-text">
                     <li class="li-text">
                       <span class="steps"> Step 1:</span>
-                      Click check-out/check-in to begin.
+                      Click check-out/check-in to begin
                     </li>
                     <li class="li-text">
                       <span class="steps"> Step 2:</span>

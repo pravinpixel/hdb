@@ -89,7 +89,7 @@
                   <ul class="ul-text">
                     <li class="li-text">
                       <span class="steps"> Step 1:</span>
-                      Click check-out/check-in to begin.
+                      Click check-out/check-in to begin
                     </li>
                     <li class="li-text">
                       <span class="steps"> Step 2:</span>
