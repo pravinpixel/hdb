@@ -41,7 +41,7 @@ class HomeController extends Controller
     }
     public function verifyStaff(Request $request)
     { 
-        $user=User::where('member_id',$request->staff_id)->where('is_active',1)->first();
+        $user=User::where('member_id',$request->staff_id)->where('is_active',0)->first();
         if(!$user){
         return response()->json([
             'status' => false,
@@ -122,7 +122,7 @@ class HomeController extends Controller
     }
     public function CheckItem(Request $request)
     { 
-        $item=Item::where('item_ref',$request->item_ref)->where('status',1)->first();
+        $item=Item::where('item_ref',$request->item_ref)->where('status',0)->first();
         if(!$item){
         return response()->json([
             'status' => false,
