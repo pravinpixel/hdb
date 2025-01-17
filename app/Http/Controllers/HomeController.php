@@ -122,7 +122,7 @@ class HomeController extends Controller
     }
     public function CheckItem(Request $request)
     { 
-        $item=Item::where('item_ref',$request->item_ref)->where('status',0)->first();
+        $item=Item::where('item_ref',$request->item_ref)->where('status',1)->first();
         if(!$item){
         return response()->json([
             'status' => false,
