@@ -573,6 +573,10 @@
     justify-content: center;
 }
 
+.form-control:focus{
+    box-shadow: unset !important;
+}
+
 /* responsive */
 
 @media (max-width: 517px) {
