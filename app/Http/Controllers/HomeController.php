@@ -41,7 +41,7 @@ class HomeController extends Controller
     }
     public function verifyStaff(Request $request)
     { 
-        $user=User::where('member_id',$request->staff_id)->where('is_active',0)->first();
+        $user=User::where('member_id',$request->staff_id)->where('is_active',1)->first();
         if(!$user){
         return response()->json([
             'status' => false,
