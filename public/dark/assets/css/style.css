@@ -308,6 +308,7 @@
 }
 
 .btn-center {
+    margin-top: 10px;
     text-align: center !important;
     /* padding-top: 35px !important; */
 }
@@ -402,7 +403,7 @@
 }
 
 .gap-btn {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     gap: 40px;
     justify-content: center;
