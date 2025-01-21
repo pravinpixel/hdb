@@ -165,6 +165,28 @@
                 alert("Developer Tools are disabled!");
             };
         })();
+        (function () {
+    // Add a new state to the history
+    history.pushState(null, null, location.href);
+
+    // Listen for the popstate event
+    window.onpopstate = function (event) {
+        // Push the same state back to prevent navigation
+        history.pushState(null, null, location.href);
+    };
+
+    // Disable keyboard shortcuts for back navigation (Alt+Left Arrow or Backspace)
+    window.addEventListener("keydown", function (e) {
+        // Check for Backspace (keyCode 8), Alt+Left Arrow (AltKey + keyCode 37)
+        if (
+            (e.key === "Backspace" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") ||
+            (e.altKey && e.key === "ArrowLeft")
+        ) {
+            e.preventDefault();
+        }
+    });
+})();
+
     </script>
   </body>
 </html>
