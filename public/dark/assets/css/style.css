@@ -318,7 +318,7 @@
     font-family: "Cabin", serif !important;
     border-radius: 8px !important;
     outline-color: none !important;
-    padding: 12px 24px !important;
+    padding: 8px 24px !important;
     font-size: 22px !important;
 }
 
@@ -402,7 +402,7 @@
 }
 
 .gap-btn {
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     gap: 40px;
     justify-content: center;
