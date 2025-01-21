@@ -217,7 +217,12 @@ class HomeController extends Controller
         $item=Checkout::where('id',$request->checkoutId)->delete();
         $user=User::where('member_id',$request->staff_id)->first();
         $checkouts=Checkout::where('checkout_by',$user->id)->where('status','pending')->get();
-        $div = "<div class='card card-border scrollable-card-body'  margin: 0 auto; '><div class='card-chekout'>";
+        if(isset($checkouts) && count($checkouts) == 0){
+           $div = "<div class='card card-border scrollable-card-body'  margin: 0 auto; ' style='display:none;'><div class='card-chekout'>";
+        }else{
+            $div = "<div class='card card-border scrollable-card-body'  margin: 0 auto; '><div class='card-chekout'>";
+        }
+      
         $checkout_id = [];
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
