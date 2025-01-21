@@ -81,37 +81,43 @@ class HomeController extends Controller
             $query->withTrashed();  
         }])->where('checkout_by',$user->id)->where('status','taken')->get();
         $div = "<div class='card-staff-check'>
-           <div class='card-body-2'>
-            <div class='padd-style-checkout-h2'>
-              <h1 class='h2-text'>Book list for check-in</h1>
-            </div>
-            <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>
-            ";
-            
+        <div class='card-body-2'>
+         <div class='padd-style-checkout-h2'>
+           <h1 class='h2-text'>Book list for check-in</h1>
+         </div>
+         <div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>
+         ";
         $checkout_id = [];
+        $checkoutCount = $checkouts->count(); // Get the total number of checkouts
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
+            
+            // Only show the delete button if there is more than one checkout
+            $deleteButton = $checkoutCount > 1 ? 
+                "<div class='flex-checkout' style='cursor: pointer;'>
+                    <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
+                </div>" 
+                : "";
+            
             $div .= "<div class='content-flex content-widthadjust'>
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
-                        <div class='flex-checkout' style='cursor: pointer;'>
-                            <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
-                        </div>
-                      </div><hr class='hr-tag'>";
+                        {$deleteButton}
+                    </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
         $checkout_ids = implode(',', $checkout_id);
         $isButtonDisabled = count($checkout_id) == 0 ? 'disabled' : ''; 
         $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
-                 <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
+                <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new gap-btn'>
-          <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
-              <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
+        <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
+            <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
-          </div>
-        </div>";
+        </div>
+        </div>";     
        }
        
         
@@ -237,39 +243,53 @@ class HomeController extends Controller
     public function ItemUnset(Request $request)
     {  
         $checkoutId = $request->checkoutId;
-        $user=User::where('member_id',$request->staff_id)->first();
-        $checkouts=Checkout::whereNotIn('id',$checkoutId)->where('checkout_by',$user->id)->where('status','taken')->get();
-
+        $user = User::where('member_id', $request->staff_id)->first();
+        $checkouts = Checkout::whereNotIn('id', $checkoutId)
+            ->where('checkout_by', $user->id)
+            ->where('status', 'taken')
+            ->get();
+        
         $div = "<div class='card-staff-check'>
            <div class='card-body-2'>
             <div class='padd-style-checkout-h2'>
               <h1 class='h2-text'>Book list for check-out</h1>
             </div><div class='card card-border scrollable-card-body' style='width: 95%; margin: 0 auto;'><div class='card-chekout'>";
+        
         $checkout_id = [];
+        $checkoutCount = $checkouts->count(); // Count total checkouts
+        
         foreach ($checkouts as $key => $checkout) {
             $no = $key + 1;
             $deleteImageUrl = asset('dark/assets/images/home/delete.png');
+        
+            // Only show the delete button if there is more than one checkout
+            $deleteButton = $checkoutCount > 1
+                ? "<div class='flex-checkout' style='cursor: pointer;'>
+                       <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
+                   </div>"
+                : "";
+        
             $div .= "<div class='content-flex content-widthadjust'>
                         <h4 class='text-content'>{$no}</h4>
                         <h4 class='text-content'>{$checkout->item->item_ref}</h4>
                         <h4 class='text-content'>{$checkout->title}</h4>
-                        <div class='flex-checkout' style='cursor: pointer;'>
-                            <img src='{$deleteImageUrl}' alt='delete' onclick='unsetCheckout({$checkout->id})'/>
-                        </div>
+                        {$deleteButton}
                       </div><hr class='hr-tag'>";
             array_push($checkout_id, $checkout->id);
         }
+        
         $checkout_ids = implode(',', $checkout_id);
         $isButtonDisabled = count($checkout_id) == 0 ? 'disabled' : '';
-        $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> <input type='hidden' name='type' value='{$request->type}'>
-        <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
+        
+        $div .= "<input type='hidden' name='check_in' value='{$checkout_ids}'> 
+                  <input type='hidden' name='type' value='{$request->type}'>
+                  <input type='hidden' name='staff_id' value='{$request->staff_id}'> ";
         $div .= "</div></div><div class='btn-center btn-end-new'>
            <button type='button' class='btn btn-color-new-bt' id='clear_function'>Clear & Cancel</button>
               <button type='button' class='btn btn-color-new' id='return' {$isButtonDisabled}>Confirm</button>
             </div> 
           </div>
         </div>";
-
         return response()->json([
             'status' => true,
             'data' => $div ,
