@@ -145,7 +145,7 @@ class HomeController extends Controller
         $ins['date']          = now();
         $ins['item_id']        = $item->id;
         $ins['title']        = $item->title;
-        $period=7;
+        $period=21;
         $ins['date_of_return'] = Carbon::now()->addDays($period);
         $ins['checkout_by']    = $user->id;
         Checkout::updateOrCreate(['item_id' => $item->id,'checkout_by'=>$user->id,'status'=>'pending'], $ins);
